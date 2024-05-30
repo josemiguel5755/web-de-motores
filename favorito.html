@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Favoritos</title>
+    <style>
+        /* Estilos básicos para la página de favoritos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .producto img {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tus Productos Favoritos</h1>
+
+    <div id="favoritos">
+        <!-- Aquí se mostrarán los productos favoritos -->
+    </div>
+
+    <script>
+        // Obtener los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombre = urlParams.get('nombre');
+        const precio = urlParams.get('precio');
+
+        // Mostrar los productos favoritos
+        if (nombre && precio) {
+            mostrarProductoFavorito(nombre, precio);
+        }
+
+        // Función para mostrar un producto favorito en la página
+        function mostrarProductoFavorito(nombre, precio) {
+            const favoritosDiv = document.getElementById('favoritos');
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('producto');
+            productoDiv.innerHTML = `
+                <h2>${nombre}</h2>
+                <p>Precio: ${precio}</p>
+            `;
+            favoritosDiv.appendChild(productoDiv);
+        }
+    </script>
+</body>
+</html>
