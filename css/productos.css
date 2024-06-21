@@ -14,7 +14,7 @@
 
 @font-face {
     font-family:mifuente2;
-    src: url(../fuentes/Roboto/Roboto-BlackItalic.ttf);
+    src: url(../fuentes/Poppins-Regular.ttf);
 }
 
 body{
@@ -49,6 +49,9 @@ h1{
    color: rgb(255, 255, 255);
    position: fixed;
   z-index: 2;
+  font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
 
 span{
@@ -74,6 +77,9 @@ nav a{
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
  
 }
 
@@ -162,6 +168,9 @@ nav a:hover{
     text-align: left;
     color: rgb(255, 255, 255);
     margin-left: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
 
 .producto p{
@@ -170,6 +179,9 @@ nav a:hover{
     color: rgb(255, 0, 0);
     font-size: 20px;
    margin-left: 20px;
+   font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
 
 
@@ -190,6 +202,7 @@ nav a:hover{
 }
 
 
+/* .carrito3 */
 
 .carrito {
     position: relative;
@@ -202,7 +215,32 @@ nav a:hover{
 
 .carrito h2{
     color: rgb(255, 68, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
+
+
+.carrito-producto {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+
+
+
+.cantidad {
+  display: flex;
+  align-items: center;
+}
+
+.cantidad button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+ 
 
 
 .lista-carrito {
@@ -220,15 +258,30 @@ nav a:hover{
 .total {
     text-align: right;
     margin-bottom: 20px;
+   
 }
 
 #total p{
     color: #000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
 
 .total h3 {
     margin-bottom: 5px;
     color: #000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+} 
+
+
+.carrito-productos + p {
+  color: #080808;
+  font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
 
 .pagar {
@@ -240,11 +293,15 @@ nav a:hover{
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .pagar:hover {
     background-color: #0056b3;
-}
+} 
 
 
 
@@ -260,10 +317,10 @@ nav a:hover{
 
 
 
-menu-btn img{
-    width: 18px;
+.menu-btn img{
+    width: 40px;
     position: relative;
-    left: 45px;
+    left: -85px;
     
     
 }
@@ -298,8 +355,8 @@ menu-btn img{
 .menu-items {
     position: absolute;
     width: 400px;
-    top: 50px; /* Adjust this value to position the cart items container */
-    right: 0;
+    top: -70px; 
+    left: 1080px;
     background-color: rgb(255, 255, 255); 
     color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
@@ -365,45 +422,15 @@ menu-btn img{
 
 
 /* .carrito3 */
-.carrito {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 20px;
-    width: 400px;
-    z-index: 2;
-  }
-  
-.carrito h2 {
-    margin-top: 0;
-  }
-  
-.carrito-producto {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
+ 
   
 
-.carrito-productos + p {
-    color: #000;
-  }
-
-.cantidad {
-    display: flex;
-    align-items: center;
-  }
-  
-.cantidad button {
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
 
 .product-details {
     /* background-color: #f9f9f9; */
     padding: 50px 0;
-   
+   margin-right: 20px;
+   color: #ffffff;
 
   }
   
@@ -423,7 +450,7 @@ menu-btn img{
 
 
 .product-info {
-    max-width: 400px;
+    max-width: 540px;
     margin-top: 50px;
   }
   
@@ -431,12 +458,18 @@ menu-btn img{
     font-size: 28px;
     color: #ff4400;
     margin-bottom: 20px;
-    
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
   }
 
 .product-info p {
     margin-bottom: 20px;
-    color: #fff;
+    color: #ffffff;
+    font-size: 20px;
+    /* font-family: mifuente2; */
+    font-weight: 700;
+    
   }
   
 .product-info ul {
@@ -447,7 +480,15 @@ menu-btn img{
 .product-info ul li {
     margin-bottom: 10px;
     list-style: none;
+   
   }
+
+.product-info li {
+   /* font-family: mifuente2; */
+  font-size: 20px; 
+  font-weight: 500;
+  
+}
   
 .product-info ul img {
     width: 30px;
@@ -465,6 +506,7 @@ menu-btn img{
 .brand {
     font-weight: 700;
     margin-bottom: 20px;
+    display: none;
 }
 
 .agregar  {
@@ -478,8 +520,8 @@ menu-btn img{
     transition: background-color 0.3s ease;
    float: right;
    position: relative;
-   top: -55px;
-   margin-right: 240px;
+   top: -25px;
+   right: 370px;
    
 }
 
@@ -506,7 +548,7 @@ menu-btn img{
 
 .container-carousel {
     position: relative;
-    width: 600px;
+    width: 700px;
     height: 400px;
     background-color: #e0e0e0;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
@@ -588,7 +630,7 @@ menu-btn img{
     bottom: 560px;
     display: flex;
     justify-content: center;
-    right: 160px;
+    left: -275px;
    
   }
 
@@ -598,7 +640,7 @@ menu-btn img{
     color: #ffffff;
     padding: 5px;
     background-color: #ff4400;
-    width: 570px;
+    width: 680px;
     text-align: center;
     
   }
@@ -643,7 +685,7 @@ hr {
 .envio{
   position: relative;
   bottom: 800px;
-  left: 540px;
+  left: 720px;
   padding: 5px;
   background-color: #333333d4;
   width: 400px;
@@ -684,7 +726,7 @@ hr {
 .devolucion{
   position: relative;
   bottom: 950px;
-  left: 980px;
+  left: 1200px;
   padding: 5px;
   background-color: #333333d4;
   width: 340px;
@@ -721,9 +763,6 @@ hr {
 
 /* valoracion del producto */
 
-
-
-
 .rating-container {
   text-align: center;
   padding: 5px;
@@ -731,7 +770,7 @@ hr {
   width: 450px;
   position: relative;
   bottom: 660px;
-  left: 50px;
+  left: 150px;
 }
 
 .stars {
@@ -769,8 +808,6 @@ hr {
 
 
 /* lista de comentarios */
-
-
 
 #product-comments {
   position: relative;
@@ -893,4 +930,132 @@ hr {
 .pagination-buttons button {
   padding: 5px 10px;
   cursor: pointer;
+}
+
+
+/* nosotros */
+
+.info_nosotros img {
+  margin-top: 100px;
+  width: 100%;
+  height: 700px;
+}
+
+.nosotros h3 {
+  font-family: mifuente2;
+  color: #ffffff;
+  font-size: 35px;
+  text-align: center;
+}
+
+
+.nosotros p{
+  color: #ffffff;
+  width: 900px;
+ text-align: justify;
+  margin-left: 180px;
+}
+
+
+
+.menu-btn2 img {
+  width: 40px;
+  position: relative;
+  left: -40px;
+  bottom: 399px;
+}
+
+
+.container_prueba2 {
+  position: relative;
+  top: 10px;
+  
+
+}
+
+
+
+.menu-btn2 {
+  position: relative;
+  bottom: 195px;
+  right: 160px;
+   height: 0px;
+  width: 0px; 
+  top: 16px;
+  background-color: transparent;
+   position: fixed; 
+  cursor: pointer;
+
+}
+
+.menu-items2 {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  background-color: #000000f0;
+  color: #fff;
+  box-shadow: 0px 0px 4px rgb(255, 68, 0);
+  display: none;
+  z-index: 1;
+  padding: 5px;
+  border-radius: 5px;
+  position: fixed;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+
+}
+
+
+.menu-items2 a {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-family: miFuentePath;
+  border-top: solid 1px rgba(255, 255, 255, 0.705);
+
+
+}
+
+.menu-items2 li {
+  border-bottom: 10px solid #555;
+
+
+}
+
+.menu-items2 a {
+  display: block;
+  padding: 10px;
+
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  width: 200px;
+  text-align: center;
+
+}
+
+.menu-items2 a:hover {
+  background-color: #555;
+}
+
+
+.menu-btn2:focus+.menu-items2,
+.menu-items2:hover {
+  display: block;
+
+}
+
+/* .menu-items2 img {
+  width: 20px;
+  float: left;
+} */
+
+
+.menu-items2 h2 {
+  color: rgb(255, 68, 0);
+  font-family: mifuente2;
+ font-size: 20px;
+  
 }

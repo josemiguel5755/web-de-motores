@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         productosEnCarrito.forEach(function(producto) {
             if (producto.dataset.nombre === nombre) {
                 productoExistente = producto;
+                alert("se agrego")
             }
         });
 
@@ -314,3 +315,136 @@ document.getElementById('submit-comment').addEventListener('click', function() {
 
 
 
+
+
+
+
+
+  //favorito
+
+// function toggleFavorite(element) {
+//     // Encuentra el elemento de producto padre
+//     var productElement = element.closest('.producto');
+    
+//     // Añadir o quitar la clase 'favorito'
+//     productElement.classList.toggle('favorito');
+   
+    
+//     // Cambiar el color del corazón
+//     var favoriteIcon = productElement.querySelector('.favorite');
+//     if (productElement.classList.contains('favorito')) {
+//         favoriteIcon.style.color = 'red'; // Cambiar a rojo cuando es favorito
+//     } else {
+//         favoriteIcon.style.color = ''; // Volver al color original cuando no es favorito
+//         alert("se eleimino de favorito")
+//     }
+    
+//     // Lógica para añadir o quitar de la lista de favoritos (no se incluye en este ejemplo)
+//     // Puedes usar localStorage o algún otro método para guardar los favoritos
+    
+//     updateFavoritesList(); // Actualizar la lista de favoritos visualmente
+// }
+
+// function updateFavoritesList() {
+//     var favoritesList = document.getElementById('favorites-list');
+//     favoritesList.innerHTML = ''; // Limpiar la lista de favoritos
+    
+//     // Obtener todos los elementos de producto con la clase 'favorito'
+//     var favoriteProducts = document.querySelectorAll('.producto.favorito');
+    
+//     favoriteProducts.forEach(function(product) {
+//         // Obtener datos del producto
+//         var name = product.getAttribute('data-name');
+//         var description = product.getAttribute('data-description');
+//         var price = product.getAttribute('data-price');
+//         var image = product.getAttribute('data-image');
+//         var link = product.getAttribute('data-link');
+        
+//         // Crear elementos para mostrar en la lista de favoritos
+//         var favoriteItem = document.createElement('div');
+//         favoriteItem.classList.add('favorito-item');
+//         favoriteItem.innerHTML = `
+//             <a href="${link}" >
+//                 <img src="${image}" alt="${name}">
+//                 <div>
+//                     <h3>${name}</h3>
+//                     <p>${description}</p>
+//                     <span class="price">${price}</span>
+//                 </div>
+//             </a>
+        
+//         `;
+        
+//         favoritesList.appendChild(favoriteItem); // Añadir el elemento a la lista de favoritos
+//         alert("se añadio al carrito")
+//     });
+// }
+
+
+
+
+// script.js
+document.addEventListener('DOMContentLoaded', (event) => {
+    let favoriteItems = new Set();
+
+    function toggleFavorite(element) {
+        let productElement = element.closest('.producto');
+        let productName = productElement.getAttribute('data-name');
+        
+        if (favoriteItems.has(productName)) {
+            favoriteItems.delete(productName);
+            element.innerHTML = '&#9825;'; // Corazón sin rellenar
+            element.classList.remove('favorited');
+        } else {
+            favoriteItems.add(productName);
+            element.innerHTML = '&#9829;'; // Corazón relleno
+            element.classList.add('favorited');
+        }
+        
+        updateFavoritesList();
+    }
+
+    function updateFavoritesList() {
+        let favoritesList = document.getElementById('favorites-list');
+        favoritesList.innerHTML = ''; // Limpiar la lista de favoritos
+        
+        favoriteItems.forEach(function(productName) {
+            let productElement = document.querySelector(`.producto[data-name="${productName}"]`);
+            if (productElement) {
+                let name = productElement.getAttribute('data-name');
+                let description = productElement.getAttribute('data-description');
+                let price = productElement.getAttribute('data-price');
+                let image = productElement.getAttribute('data-image');
+                let link = productElement.getAttribute('data-link');
+                
+                let favoriteItem = document.createElement('div');
+                favoriteItem.classList.add('favorite-item');
+                favoriteItem.innerHTML = `
+                    <img src="${image}" alt="${name}">
+                    <div class="info">
+                        <h3>${name}</h3>
+                        <p>${description}</p>
+                        <span class="price">${price}</span>
+                        <a href="${link}" target="_blank">Ver producto</a>
+                    </div>
+                    <button class="remove-btn" onclick="removeFavorite('${productName}')">Eliminar</button>
+                `;
+                
+                favoritesList.appendChild(favoriteItem);
+            }
+        });
+    }
+
+    function removeFavorite(productName) {
+        favoriteItems.delete(productName);
+        let productElement = document.querySelector(`.producto[data-name="${productName}"] .favorite`);
+        if (productElement) {
+            productElement.innerHTML = '&#9825;'; // Corazón sin rellenar
+            productElement.classList.remove('favorited');
+        }
+        updateFavoritesList();
+    }
+
+    window.toggleFavorite = toggleFavorite;
+    window.removeFavorite = removeFavorite;
+});

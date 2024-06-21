@@ -1,59 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Favoritos</title>
-    <style>
-        /* Estilos básicos para la página de favoritos */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        .producto {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        .producto img {
-            max-width: 100px;
-            height: auto;
-        }
-    </style>
+    <title>Productos</title>
+    <link rel="stylesheet" href="prueva.css">
 </head>
 <body>
-    <h1>Tus Productos Favoritos</h1>
+   
 
-    <div id="favoritos">
-        <!-- Aquí se mostrarán los productos favoritos -->
-    </div>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen de Perfil</title>
+</head>
+<body>
+    <form class="cargar-imagen" id="uploadForm" enctype="multipart/form-data">
+        <figure class="cambio-img">
+            <img src="imagenes/usuario-especialista.png" alt="Imagen de perfil" id="profileImage">
+        </figure>
+        <label for="cargarfoto">Seleccionar una imagen</label>
+        <input type="file" id="cargarfoto" name="cargarfoto" accept="image/*">
+        <button type="submit">Subir foto</button>
+    </form>
 
     <script>
-        // Obtener los parámetros de la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const nombre = urlParams.get('nombre');
-        const precio = urlParams.get('precio');
+        document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
 
-        // Mostrar los productos favoritos
-        if (nombre && precio) {
-            mostrarProductoFavorito(nombre, precio);
-        }
+            const fileInput = document.getElementById('cargarfoto');
+            const formData = new FormData();
+            formData.append('cargarfoto', fileInput.files[0]);
 
-        // Función para mostrar un producto favorito en la página
-        function mostrarProductoFavorito(nombre, precio) {
-            const favoritosDiv = document.getElementById('favoritos');
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('producto');
-            productoDiv.innerHTML = `
-                <h2>${nombre}</h2>
-                <p>Precio: ${precio}</p>
-            `;
-            favoritosDiv.appendChild(productoDiv);
-        }
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    document.getElementById('profileImage').src = result.filePath;
+                    alert('Imagen subida con éxito');
+                } else {
+                    alert('Error al subir la imagen');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al subir la imagen');
+            }
+        });
     </script>
+</body>
+</html>
+
+
+
+
+
+
+    <!-- <div class="container_prueba2">
+        <h2>Mis Favoritos</h2>
+        <div class="favorites" id="favorites-list">
+             Lista de favoritos se mostrará aquí -->
+        <!-- </div>
+    </div>  -->
+
+    <script src="pruva.js"></script>
+   
 </body>
 </html>

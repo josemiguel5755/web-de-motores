@@ -1,51 +1,63 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('.comentario-form');
-    const nombreInput = document.getElementById('nombre');
-    const emailInput = document.getElementById('email');
-    const comentarioInput = document.getElementById('comentario');
-    const comentariosLista = document.getElementById('comentarios-lista');
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const comentario = {
-            nombre: nombreInput.value,
-            email: emailInput.value,
-            comentario: comentarioInput.value
-        };
 
-        const response = await fetch('/api/comentarios', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(comentario)
-        });
 
-        if (response.ok) {
-            nombreInput.value = '';
-            emailInput.value = '';
-            comentarioInput.value = '';
-            loadComentarios();
+// script.js
+let favoriteItems = new Set();
+
+function toggleFavorite(element) {
+    let productElement = element.closest('.producto');
+    let productName = productElement.getAttribute('data-name');
+    
+    if (favoriteItems.has(productName)) {
+        favoriteItems.delete(productName);
+        element.innerHTML = '&#9825;'; // Corazón sin rellenar
+        element.classList.remove('favorited');
+    } else {
+        favoriteItems.add(productName);
+        element.innerHTML = '&#9829;'; // Corazón relleno
+        element.classList.add('favorited');
+    }
+    
+    updateFavoritesList();
+}
+
+function updateFavoritesList() {
+    let favoritesList = document.getElementById('favorites-list');
+    favoritesList.innerHTML = ''; // Limpiar la lista de favoritos
+    
+    favoriteItems.forEach(function(productName) {
+        let productElement = document.querySelector(`.producto[data-name="${productName}"]`);
+        if (productElement) {
+            let name = productElement.getAttribute('data-name');
+            let description = productElement.getAttribute('data-description');
+            let price = productElement.getAttribute('data-price');
+            let image = productElement.getAttribute('data-image');
+            let link = productElement.getAttribute('data-link');
+            
+            let favoriteItem = document.createElement('div');
+            favoriteItem.classList.add('favorite-item');
+            favoriteItem.innerHTML = `
+                <img src="${image}" alt="${name}">
+                <div class="info">
+                    <h3>${name}</h3>
+                    <p>${description}</p>
+                    <span class="price">${price}</span>
+                    <a href="${link}" target="_blank">Ver producto</a>
+                </div>
+                <button class="remove-btn" onclick="removeFavorite('${productName}')">Eliminar</button>
+            `;
+            
+            favoritesList.appendChild(favoriteItem);
         }
     });
+}
 
-    async function loadComentarios() {
-        const response = await fetch('/api/comentarios');
-        const comentarios = await response.json();
-
-        comentariosLista.innerHTML = '';
-        comentarios.forEach(com => {
-            const comentarioDiv = document.createElement('div');
-            comentarioDiv.classList.add('comentario');
-            comentarioDiv.innerHTML = `
-                <h4>${com.nombre}</h4>
-                <p>${com.comentario}</p>
-            `;
-            comentariosLista.appendChild(comentarioDiv);
-        });
+function removeFavorite(productName) {
+    favoriteItems.delete(productName);
+    let productElement = document.querySelector(`.producto[data-name="${productName}"] .favorite`);
+    if (productElement) {
+        productElement.innerHTML = '&#9825;'; // Corazón sin rellenar
+        productElement.classList.remove('favorited');
     }
-
-    loadComentarios();
-});
-
+    updateFavoritesList();
+}
