@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pruevas</title>
-  <link rel="stylesheet" href="prueva.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/estilos.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -35,63 +35,15 @@
       </ul>
     </nav>
     <div class="blok">
-        <div class="container_prueba2">
-            <button class="menu-btn2">
-              <img src="imagenes/heart-regular-60.png" alt="">
-            </button>
-            <div class="menu-items2">
-                <h2>Mis Favoritos</h2>
-            <div class="favorites" id="favorites-list">
-            <!-- Lista de favoritos se mostrará aquí -->
-                </div>
-              </div>
-            </div>
-          </div>
-        <!-- </div> -->
-      <!-- <a href="">
+      <a href="">
+        <img src="imagenes/heart-regular-60.png" alt="">
+      </a>
+      <a href="">
         <img src="imagenes/search-alt-2-regular-60.png" alt="">
-      </a> -->
-      
-
-      <div class="container_prueba3">
-        <button class="menu-btn3">
-          <img src="imagenes/user-regular-60.png" alt="">
-        </button>
-        <div class="menu-perfil">
-            <h3>perfil</h3>
-            <form class="cargar-imagen" id="uploadForm" enctype="multipart/form-data">
-              <figure class="cambio-img">
-                  <img src="imagenes/usuario-especialista.png" alt="Imagen de perfil" id="profileImage">
-              </figure>
-              <label for="cargarfoto">Seleccionar una imagen</label>
-              <input type="file" id="cargarfoto" name="cargarfoto" accept="image/*">
-              <button type="submit">Subir foto</button>
-              <div class="eliminar">
-              <button type="button"  id="deleteButton">
-                <img src="imagenes/basura.png" alt="" >
-              </button>
-            </div>
-          </form>
-            <div class="titinfo">
-                <h4>Nombre</h4><img src="imagenes/bx-user_copy.svg" alt="">
-                <p>Carlos</p>
-                <h4>Apellidos</h4><img src="imagenes/bxs-user-detail.svg" alt="">
-                <p>Acosta Reyes</p>
-                <h4>Email</h4><img src="imagenes/bx-envelope.svg" alt="">
-                <p>carlosareyes@gmail.com</p>
-                <h4>Género</h4><img src="imagenes/bx-male-female.svg" alt="">
-                <p>Masculino</p>
-            </div>
-            <div class="cerrar-sesion">
-               <a href="index.html">cerrar sesion</a>
-            </div>
-          </div>
-        </div>
-      <!-- </div>
-     </div>  -->
-
-
-
+      </a>
+      <a href="">
+        <img src="imagenes/user-regular-60.png" alt="">
+      </a>
 
       <div class="container_prueba">
         <button class="menu-btn">
@@ -104,11 +56,11 @@
             <div class="carrito-productos">
             </div>
             <p>Total a Pagar: $<span id="total">0</span></p>
-            <button class="pagar" type="submit">Pagar</button>
+            <button class="pagar">Pagar</button>
           </div>
         </div>
       </div>
-    <!-- </div> -->
+    </div>
 
     <div class="carrucer">
 
@@ -150,11 +102,11 @@
       </div>
       <div class="cont">
           <img src="imagenes/moto7.avif" alt="Moto">
-          <h3>Motos</h3>
+          <h3>Mostos</h3>
       </div>
       <div class="cont">
         <img src="imagenes/motocarreta.png" alt="Moto">
-        <h3>Motoscarrata</h3>
+        <h3>Mostocarrata</h3>
     </div>
   </div>
 
@@ -167,31 +119,30 @@
 
 
 
-  <div class="productos" id="product-list">
-    <div class="producto" data-name="moto1" data-description="Descripción del producto 1" data-price="$99.99" data-image="imagenes/moto7.avif" data-link="productos.html">
-        <img src="imagenes/moto11.jpg" alt="Producto 1">
-        <h2>moto1</h2>
-        <p>$10</p>
-        <div class="cal">
-            <a href="javascript:void(0)" class="agregar" data-nombre="moto1" data-precio="10">
-                <img src="imagenes/cart-regular-60.png" alt="">
-            </a>
+  <div class="productos">
+    <div class="producto">
+      <img src="imagenes/moto11.jpg" alt="Producto 1">
+      <h2>Producto 1</h2>
+      <p> $10</p>
+      <div class="cal">
+        <a href="javascript:void(0)" class="agregar" data-nombre="Producto 1" data-precio="10" >
+          <img src="imagenes/cart-regular-60.png" alt="">
+        </a>
+      </div>
+      <div class="cor">
+        <a href="">
+          <img src="imagenes/heart-regular-60.png" alt="">
+        </a>
+        <div class="compra">
+          <a href="">compra</a>
+         
         </div>
-        <div class="cor">
-            <div class="compra">
-                <a href="">compra</a>
-                <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
-            </div>
-        </div>
+      </div>
+
     </div>
-    <!-- Agrega más productos aquí si es necesario -->
 
-
-
-
-
-    <div class="producto" data-name="moto1" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto12.jpg" data-link="productos.html">
-      <img src="imagenes/moto12.jpg" alt="Producto 2">
+    <div class="producto">
+      <img src="imagenes/moto9.avif" alt="Producto 2">
       <h2>moto 350</h2>
       <p>$16.00</p>
       <div class="cal">
@@ -200,14 +151,16 @@
         </a>
       </div>
       <div class="cor">
+        <a href="">
+          <img src="imagenes/heart-regular-60.png" alt="">
+        </a>
         <div class="compra">
           <a href="productos.html">compra</a>
-          <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
         </div>
       </div>
     </div>
 
-    <div class="producto" data-name="moto2" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto9.avif" data-link="productos.html">
+    <div class="producto">
       <img src="imagenes/moto9.avif" alt="Producto 2">
       <h2>moto 250</h2>
       <p>$16.00</p>
@@ -217,15 +170,17 @@
         </a>
       </div>
       <div class="cor">
+        <a href="">
+          <img src="imagenes/heart-regular-60.png" alt="">
+        </a>
         <div class="compra">
           <a href="">compra</a>
-          <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
         </div>
       </div>
     </div>
 
 
-    <div class="producto" data-name="moto3" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto9.avif" data-link="productos.html">
+    <div class="producto">
       <img src="imagenes/moto9.avif" alt="Producto 2">
       <h2>moto 550</h2>
       <p>$216.00</p>
@@ -235,14 +190,16 @@
         </a>
       </div>
       <div class="cor">
+        <a href="">
+          <img src="imagenes/heart-regular-60.png" alt="">
+        </a>
         <div class="compra">
           <a href="">compra</a>
-          <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
         </div>
       </div>
     </div>
 
-    <div class="producto" data-name="moto4" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
+    <div class="producto">
       <img src="imagenes/moto9.avif" alt="Producto 2">
       <h2>moto 650</h2>
       <p>$1116.00</p>
@@ -252,15 +209,17 @@
         </a>
       </div>
       <div class="cor">
+        <a href="">
+          <img src="imagenes/heart-regular-60.png" alt="">
+        </a>
         <div class="compra">
           <a href="">compra</a>
-          <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
         </div>
       </div>
     </div>
 
 
-    <div class="producto" data-name="moto5" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
+    <div class="producto">
       <img src="imagenes/moto11.jpg" alt="Producto 2">
       <h2>moto 350</h2>
       <p>$16.00</p>
@@ -270,20 +229,20 @@
         </a>
       </div>
       <div class="cor">
+        <a href="">
+          <img src="imagenes/heart-regular-60.png" alt="">
+        </a>
         <div class="compra">
           <a href="">compra</a>
-          <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
         </div>
       </div>
     </div>
-  <!-- </div> -->
-
-
   </div>
 
-  
 
-  <script src="prueva2.js"></script>
+ 
+
+  <script src="script.js"></script>
 </body>
 
 </html>

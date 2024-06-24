@@ -429,7 +429,7 @@ nav a:hover{
 .product-details {
     /* background-color: #f9f9f9; */
     padding: 50px 0;
-   margin-right: 20px;
+   
    color: #ffffff;
 
   }
@@ -440,6 +440,7 @@ nav a:hover{
   align-items: center;
   z-index: -1;  
   justify-content: right;
+  margin-left: 0px;
 }
 
 .product-image img {
@@ -487,6 +488,7 @@ nav a:hover{
    /* font-family: mifuente2; */
   font-size: 20px; 
   font-weight: 500;
+  width: 400px;
   
 }
   
@@ -521,7 +523,7 @@ nav a:hover{
    float: right;
    position: relative;
    top: -25px;
-   right: 370px;
+   right: 250px;
    
 }
 
@@ -548,7 +550,7 @@ nav a:hover{
 
 .container-carousel {
     position: relative;
-    width: 700px;
+    width: 600px;
     height: 400px;
     background-color: #e0e0e0;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
@@ -630,7 +632,7 @@ nav a:hover{
     bottom: 560px;
     display: flex;
     justify-content: center;
-    left: -275px;
+    left: -155px;
    
   }
 
@@ -640,7 +642,7 @@ nav a:hover{
     color: #ffffff;
     padding: 5px;
     background-color: #ff4400;
-    width: 680px;
+    width: 580px;
     text-align: center;
     
   }
@@ -685,7 +687,7 @@ hr {
 .envio{
   position: relative;
   bottom: 800px;
-  left: 720px;
+  left: 540px;
   padding: 5px;
   background-color: #333333d4;
   width: 400px;
@@ -726,7 +728,7 @@ hr {
 .devolucion{
   position: relative;
   bottom: 950px;
-  left: 1200px;
+  left: 980px;
   padding: 5px;
   background-color: #333333d4;
   width: 340px;
@@ -770,7 +772,7 @@ hr {
   width: 450px;
   position: relative;
   bottom: 660px;
-  left: 150px;
+  left: 60px;
 }
 
 .stars {
@@ -1070,27 +1072,46 @@ hr {
   background-position:center ;
   width: 100%;
  height: 70vh;
+ 
 
 }
 
+.wit {
+  padding: 15px;
+  width: 100%;
+  height: 200%;
+  background-color: #00000096;
+  position: relative;
+  bottom: 580px;
+  z-index: -2;
+}
+
 .inicio {
-  margin-top: 200px;
-  margin-left: 450px;
+  margin-top: 100px;
+  margin-left: 370px;
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.212);
   backdrop-filter: blur(10px);
-  width: 680px;
-  height: 480px;
+  width: 600px;
+  height: 450px;
+  border-radius: 8px;
+ 
 }
 
 .inicio input {
   display: flex;
- width: 580px;
- height: 50px;
+  border: none;
+ width: 500px;
+ height: 40px;
  border-radius: 8px;
  
 }
 
+.inicio input::placeholder {
+  padding-left: 10px;
+  color: rgb(255, 68, 0);
+  font-family: mifuente2;
+}
 
 
 .inicio form {
@@ -1123,14 +1144,19 @@ hr {
 }
 
 .inicio button {
-  width:580px ;
-  height: 50px;
+  width:500px ;
+  height: 40px;
  margin-top: 20px;
  font-size: 20px;
  border: none;
  background-color: #ff4400;
  color: #ffffff;
  border-radius: 8px;
+ cursor: pointer;
+}
+
+.inicio button:hover {
+  background-color: #b53300;
 }
 
 
@@ -1143,6 +1169,91 @@ hr {
 
 
 .inicio a {
+  color:rgb(5, 238, 255) ;
+  font-family: mifuente2;
+  
+}
+
+
+/* registrarse */
+
+.registrate {
+  margin-top: 30px;
+  margin-left: 450px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.212);
+  backdrop-filter: blur(10px);
+  width: 500px;
+  height: 580px;
+  border-radius: 8px;
+ 
+}
+
+.registrate input {
+  display: flex;
+  border: none;
+ width: 400px;
+ height: 40px;
+ border-radius: 8px;
+ 
+}
+
+.registrate input::placeholder {
+  padding-left: 10px;
+  color: rgb(255, 68, 0);
+  font-family: mifuente2;
+}
+
+
+.registrate form {
+  margin-left: 50px;
+  margin-top: 5px;
+  
+}
+
+.registrate h2 {
+  font-size: 25px;
+  color: #ffffff;
+  text-align: center;
+  font-family: mifuente2;
+}
+
+.registrate p {
+  font-size: 18px;
+  margin-left: 65px;
+  font-family: mifuente2;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.registrate label {
+  font-size: 15px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 10px;
+  
+}
+
+.registrate button {
+  width:400px ;
+  height: 40px;
+ font-size: 20px;
+ border: none;
+ background-color: #ff4400;
+ color: #ffffff;
+ border-radius: 8px;
+}
+
+
+.registrate h5 {
+  text-align: center;
+  font-size: 17px;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+
+.registrate a {
   color:rgb(5, 238, 255) ;
   font-family: mifuente2;
   

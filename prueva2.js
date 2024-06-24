@@ -254,3 +254,21 @@ document.getElementById('deleteButton').addEventListener('click', function() {
     document.getElementById('profileImage').src = 'imagenes/usuario-especialista.png';
     alert('Imagen eliminada con éxito');
 });
+
+
+
+
+//inicio de sesion
+
+document.getElementById("inicio").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var gmail = document.getElementById("gmail").value;
+    var password = document.getElementById("password").value;
+
+    if (gmail === "admin@1" && password === "123") {
+        window.location.href = "nosotros.html";
+    } else {
+        alert("La contraseña o el usuario es incorrecto");
+    }
+});
