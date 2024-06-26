@@ -3,15 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSpan = document.getElementById('total');
     let totalAPagar = 0;
 
-    // Función para agregar un producto al carrito o actualizar la cantidad si ya está en el carrito
-    function agregarAlCarrito(nombre, precio) {
+    function agregarAlCarrito(nombre, precio, imageUrl, productLink) {
         const productosEnCarrito = carritoProductos.querySelectorAll('.carrito-producto');
         let productoExistente = null;
 
         productosEnCarrito.forEach(function(producto) {
             if (producto.dataset.nombre === nombre) {
                 productoExistente = producto;
-                alert("se agrego");
             }
         });
 
@@ -21,14 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
             cantidad++;
             cantidadSpan.textContent = cantidad;
         } else {
-            totalAPagar += precio;
-            totalSpan.textContent = totalAPagar.toFixed(2);
-
             const nuevoProducto = document.createElement('div');
             nuevoProducto.classList.add('carrito-producto');
             nuevoProducto.dataset.nombre = nombre;
             nuevoProducto.innerHTML = `
-                <span class="nombre">${nombre}</span>
+                <img src="${imageUrl}" alt="${nombre}" class="producto-imagen" style="width: 110px; height: 90px; object-fit: cover;">
+                <span class="nombre-producto">${nombre}</span>
                 <span class="precio">$${precio.toFixed(2)}</span>
                 <div class="cantidad">
                     <button class="disminuir">-</button>
@@ -36,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="aumentar">+</button>
                     <button class="eliminar">Eliminar</button>
                 </div>
+                <button class="ver-descripcion" onclick="window.location.href='${productLink}'">Ver producto</button>
             `;
 
             carritoProductos.appendChild(nuevoProducto);
@@ -47,59 +44,66 @@ document.addEventListener('DOMContentLoaded', function() {
         actualizarTotal();
     }
 
-    // Actualiza los eventos de eliminación de productos
     function actualizarEventosEliminar() {
         const botonesEliminar = document.querySelectorAll('.eliminar');
         botonesEliminar.forEach(function(boton) {
-            boton.addEventListener('click', function() {
-                const producto = boton.parentElement.parentElement;
-                const precio = parseFloat(producto.querySelector('.precio').textContent.slice(1)); // Quita el signo $
-                const cantidad = parseInt(producto.querySelector('.cantidad-numero').textContent);
-                totalAPagar -= precio * cantidad;
-                totalSpan.textContent = totalAPagar.toFixed(2);
-                producto.remove();
-            });
+            boton.removeEventListener('click', eliminarProducto);
+            boton.addEventListener('click', eliminarProducto);
         });
     }
 
-    // Actualiza los eventos de cantidad de productos
+    function eliminarProducto() {
+        const producto = this.parentElement.parentElement;
+        const precio = parseFloat(producto.querySelector('.precio').textContent.slice(1)); // Quita el signo $
+        const cantidad = parseInt(producto.querySelector('.cantidad-numero').textContent);
+        totalAPagar -= precio * cantidad;
+        totalSpan.textContent = totalAPagar.toFixed(2);
+        producto.remove();
+    }
+
     function actualizarEventosCantidad() {
         const botonesAumentar = document.querySelectorAll('.aumentar');
         botonesAumentar.forEach(function(boton) {
-            boton.addEventListener('click', function() {
-                const cantidadSpan = boton.parentElement.querySelector('.cantidad-numero');
-                let cantidad = parseInt(cantidadSpan.textContent);
-                cantidad++;
-                cantidadSpan.textContent = cantidad;
-                actualizarTotal();
-            });
+            boton.removeEventListener('click', aumentarCantidad);
+            boton.addEventListener('click', aumentarCantidad);
         });
 
         const botonesDisminuir = document.querySelectorAll('.disminuir');
         botonesDisminuir.forEach(function(boton) {
-            boton.addEventListener('click', function() {
-                const cantidadSpan = boton.parentElement.querySelector('.cantidad-numero');
-                let cantidad = parseInt(cantidadSpan.textContent);
-                if (cantidad > 1) {
-                    cantidad--;
-                    cantidadSpan.textContent = cantidad;
-                    actualizarTotal();
-                }
-            });
+            boton.removeEventListener('click', disminuirCantidad);
+            boton.addEventListener('click', disminuirCantidad);
         });
     }
 
-    // Evento para agregar producto al carrito
+    function aumentarCantidad() {
+        const cantidadSpan = this.parentElement.querySelector('.cantidad-numero');
+        let cantidad = parseInt(cantidadSpan.textContent);
+        cantidad++;
+        cantidadSpan.textContent = cantidad;
+        actualizarTotal();
+    }
+
+    function disminuirCantidad() {
+        const cantidadSpan = this.parentElement.querySelector('.cantidad-numero');
+        let cantidad = parseInt(cantidadSpan.textContent);
+        if (cantidad > 1) {
+            cantidad--;
+            cantidadSpan.textContent = cantidad;
+            actualizarTotal();
+        }
+    }
+
     const agregarBotones = document.querySelectorAll('.agregar');
     agregarBotones.forEach(function(boton) {
         boton.addEventListener('click', function() {
             const nombre = boton.getAttribute('data-nombre');
             const precio = parseFloat(boton.getAttribute('data-precio'));
-            agregarAlCarrito(nombre, precio);
+            const imageUrl = boton.getAttribute('data-image');
+            const productLink = boton.getAttribute('data-link');
+            agregarAlCarrito(nombre, precio, imageUrl, productLink);
         });
     });
 
-    // Función para actualizar el total del carrito
     function actualizarTotal() {
         totalAPagar = 0;
         const productos = carritoProductos.querySelectorAll('.carrito-producto');
@@ -114,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+//favorito
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -213,6 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+
 // Manejar la selección de imagen para vista previa
 document.getElementById('cargarfoto').addEventListener('change', function(event) {
     const file = event.target.files[0];
@@ -225,6 +234,8 @@ document.getElementById('cargarfoto').addEventListener('change', function(event)
         reader.readAsDataURL(file);
     }
 });
+
+
 
 // Manejar la subida de imagen
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
@@ -247,6 +258,8 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
 
     reader.readAsDataURL(file);
 });
+
+
 
 // Manejar la eliminación de imagen
 document.getElementById('deleteButton').addEventListener('click', function() {

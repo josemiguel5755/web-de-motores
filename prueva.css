@@ -326,10 +326,32 @@ aside img {
     bottom: 20px;
     left: 60px;
     border: none;
+    
 
 }
 
+.ver-descripcion {
+  width: 90px;
+  height: 30px;
+   margin-top: 30px;
+}
 
+.precio {
+    margin-top: 35px;
+}
+
+.nombre-producto {
+    color: blue; 
+    position: relative;
+    right: 30px;
+    top: 99px;
+}
+
+
+.producto-imagen {
+    position: relative;
+    left: 50px;
+}
 
 .cal {
     position: relative;
@@ -486,6 +508,7 @@ ul {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: italic;
+    margin-top: 20px;
 }
 
 .cantidad {
