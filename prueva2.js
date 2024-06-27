@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 productoExistente = producto;
             }
         });
+        alert("Se agrego el producto al carrrito")
 
         if (productoExistente) {
             const cantidadSpan = productoExistente.querySelector('.cantidad-numero');

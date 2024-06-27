@@ -262,11 +262,15 @@ aside img {
 
 .cont h3 {
     margin-top: 10px;
-    font-size: 1.2em;
+    font-size: 25px;
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: italic;
+}
+
+.cont a {
+    text-decoration: none;
 }
 
 /* h6{
@@ -343,8 +347,8 @@ aside img {
 .nombre-producto {
     color: blue; 
     position: relative;
-    right: 30px;
-    top: 99px;
+    right: -55px;
+    top: 69px;
 }
 
 
@@ -1191,6 +1195,7 @@ menu-btn img {
 .cargar-imagen input {
     margin-top: 20px;
    margin-left: 130px;
+   cursor: pointer;
 }
 
 .cargar-imagen button {
@@ -1229,7 +1234,7 @@ menu-btn img {
 
 .titinfo {
     position: relative;
-    top: 270px;
+    top: 220px;
     right: 190px;
 }
 
@@ -1288,7 +1293,7 @@ menu-btn img {
 
 .cerrar-sesion {
     position: relative;
-    top: 90px;
+    top: 20px;
     left: 50px;
    
 }
