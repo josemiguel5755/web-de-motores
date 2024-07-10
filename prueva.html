@@ -18,8 +18,44 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
-</head>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedImage = localStorage.getItem('profileImage');
+        if (savedImage) {
+            document.getElementById('profileImage').src = savedImage;
+        }
 
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fileInput = document.getElementById('cargarfoto');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('No se seleccionó ninguna imagen');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const result = e.target.result;
+                localStorage.setItem('profileImage', result);
+                document.getElementById('profileImage').src = result;
+                alert('Imagen subida con éxito');
+            };
+
+            reader.readAsDataURL(file);
+        });
+
+        document.getElementById('deleteButton').addEventListener('click', function() {
+            localStorage.removeItem('profileImage');
+            document.getElementById('profileImage').src = 'imagenes/usuario-especialista.png';
+            alert('Imagen eliminada con éxito');
+        });
+    });
+    </script>
+
+</head>
 <body>
   <header>
     <h1>super <span>motor</span></h1>
@@ -28,7 +64,7 @@
         <li>
           <a href="">Inicio</a>
           <a href="nosotros.html">Nosotros</a>
-          <a href="">Ofertas</a>
+          <a href="">Servicios</a>
           <a href="">Contactos</a>
 
         </li>
@@ -136,7 +172,6 @@
         </li>
       </ul>
     </div>
-
   </header>
 
   <main>
@@ -150,12 +185,14 @@
         </a>
       </div>
       <div class="cont">
-          <img src="imagenes/moto7.avif" alt="Moto">
+         <a href=""> <img src="imagenes/moto7.avif" alt="Moto">
           <h3>Motos</h3>
+          </a>
       </div>
       <div class="cont">
-        <img src="imagenes/motocarreta.png" alt="Moto">
+       <a href=""> <img src="imagenes/motocarreta.png" alt="Moto">
         <h3>Motoscarrata</h3>
+        </a>
     </div>
   </div>
 
@@ -165,6 +202,15 @@
     </div>
   </main>
 
+  <div class="search-container">
+    <img src="imagenes/search-alt-2-regular-60.png" alt="Buscar" class="search-icon" id="searchIcon">
+    <input type="text" id="searchBar" placeholder="Buscar producto...">
+  </div>
+  <div class="productos" id="product-list">
+    <!-- Productos aquí -->
+  </div>
+
+  <div class="no-result" id="noResult">Producto no existe</div>
 
 
 
@@ -186,6 +232,7 @@
         </div>
     </div>
     <!-- Agrega más productos aquí si es necesario -->
+
 
 
 
@@ -280,7 +327,7 @@
   <!-- </div> -->
 
 
-  </div>
+  
 
   
 

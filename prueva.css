@@ -98,6 +98,57 @@ nav a:hover {
 }
 
 
+.search-container img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: 37%;
+    z-index: 1;
+}
+
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 80px;
+    left: 25%;
+    
+  }
+.search-icon {
+    cursor: pointer;
+  }
+#searchBar {
+    border: none;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 16px;
+    transition: width 0.3s;
+    width: 500px;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.566);
+    border-radius: 10px;
+  }
+
+#searchBar::placeholder {
+    color: #ff4400;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    padding-left: 3%;
+  }
+
+.no-result {
+    display: none;
+    color: red;
+    font-weight: bold;
+    position: relative;
+    top: 50px;
+    left: 40%;
+    
+  }
+
+
 /* nav{
     display: flex;
     justify-content: center;
@@ -273,6 +324,10 @@ aside img {
     text-decoration: none;
 }
 
+
+.cont img:hover {
+    border: solid #ff4400;
+}
 /* h6{
     color: rgb(255, 255, 255);
     font-size: 25px;
@@ -363,7 +418,7 @@ aside img {
 }
 
 .sub h2 {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     color: #f4f4f4;
     margin-top: 30px;
@@ -410,9 +465,9 @@ ul {
     flex: 70%;
     display: flex;
     flex-wrap: wrap;
-
+    width: 100%;
     gap: 80px;
-    margin-top: 170px;
+    margin-top: 7%;
 
 
 }
@@ -430,6 +485,8 @@ ul {
 
 .producto {
     width: 25%;
+    box-sizing: border-box;
+  
 
 
 
@@ -1064,7 +1121,7 @@ menu-btn img {
 /* perfil */
 
 
-  
+
 .menu-btn3 img {
     width: 40px;
     position: relative;
@@ -1301,7 +1358,7 @@ menu-btn img {
 
 .cerrar-sesion a {
     text-decoration: none;
-   text-align: center;
+    text-align: center;
   font-size: 25px;
   margin: 10px;
  color: #ffffff;
