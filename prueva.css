@@ -111,9 +111,10 @@ nav a:hover {
     position: relative;
     display: flex;
     align-items: center;
-    top: 80px;
+    top: 210px;
     left: 25%;
-    
+ 
+  
   }
 .search-icon {
     cursor: pointer;
@@ -143,7 +144,7 @@ nav a:hover {
     color: red;
     font-weight: bold;
     position: relative;
-    top: 50px;
+    top: 260px;
     left: 40%;
     
   }
@@ -425,6 +426,7 @@ aside img {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: italic;
+   margin: 100px;
 }
 
 .agregar:hover {
@@ -467,7 +469,7 @@ ul {
     flex-wrap: wrap;
     width: 100%;
     gap: 80px;
-    margin-top: 7%;
+    margin-top: 15%;
 
 
 }
@@ -486,6 +488,8 @@ ul {
 .producto {
     width: 25%;
     box-sizing: border-box;
+     display: flex;
+    flex-direction: column; 
   
 
 
@@ -1348,6 +1352,207 @@ menu-btn img {
 }
 
 
+
+/* animacion del banner */
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    padding: 5px;
+    background-color: rgb(255, 68, 0);
+}
+
+
+.banner img {
+    width: 550px;
+    margin-left: 5%;
+}
+
+.banner img, .infor {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.banner.show img, .banner.show .infor {
+    transform: translateX(-10%);
+    opacity: 1;
+}
+
+.infor {
+    margin-left: 20px;
+    transition-delay: 0.5s; /* Retraso para la info */
+}
+
+.infor p {
+    color: #f4f4f4;
+}
+
+
+#product-list {
+  margin-top: 0;
+} 
+
+
+.submotos h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    margin-top: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+   margin: 10px;
+}
+
+/* pagina metodo de pago */
+
+.jabon {
+    /* background-color: #750fef;  */
+
+   
+}
+
+/* formulario */
+
+.formulario  {
+    margin-top: 6%;
+   margin-left: 10%;
+   border: solid 1px  rgb(255, 68, 0);
+   width: 40%;
+   height: 589px;
+}
+
+.formulario form {
+    margin-left: 5%;
+}
+
+.formulario input {
+    display: flex;
+    width: 90%;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    border: solid 1px  rgb(255, 68, 0);
+   background-color: #000;
+}
+
+.formulario select {
+    display: flex;
+    width: 90%;
+    height: 40px;
+    border: solid 1px  rgb(255, 68, 0);
+   background-color: #000;
+}
+
+.formulario option {
+    color: #ffffff;
+}
+
+.formulario  h3 {
+    margin: 17px;
+    font-size: 33px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.formulario label {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.formulario input::placeholder {
+    color: #ffffff;
+   padding-left: 3%;
+}
+
+.formulario button {
+    padding: 5px;
+    width: 90%;
+    height: 40px;
+    background-color:  rgb(255, 73, 7);
+   border: none;
+   border-radius: 5px;
+  
+  color: #ffffff;
+  font-size: 17px;
+}
+
+
+.custom-select::after {
+    content: '▼';
+     position: absolute;
+   bottom: 85px;
+   left: 43%;
+    transform: translateY(20%); 
+    pointer-events: none;
+    color: rgb(255, 255, 255); /* Cambia este color a tu preferencia */
+    font-size: 16px;
+}
+
+
+.custom::after {
+    content: '▼';
+     position: absolute;
+   bottom: 162px;
+   left: 43%;
+    transform: translateY(20%); 
+    pointer-events: none;
+    color: rgb(255, 255, 255); /* Cambia este color a tu preferencia */
+    font-size: 16px;
+    
+}
+
+/* 
+metodo de pago */
+
+.metododepago {
+color: #ffffff;
+float: right;
+position: relative;
+bottom: 570px;
+right: 20%;
+}
+
+.metododepago h3 {
+    font-size: 31px;
+    line-height: 2;
+}
+
+.metododepago p {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.metododepago h4 {
+    font-size: 25px;
+    line-height: 2;
+}
+
+.concs {
+    display: flex;
+    gap: 40px;
+}
+
+.conimagen img {
+    width: 40px;
+    
+}
+
+.conimagen {
+    border: solid 1px white;
+ 
+}
+
+.conimagen {
+    border: solid 1px white;
+   
+}
+
 .cerrar-sesion {
     position: relative;
     top: 20px;
@@ -1371,4 +1576,6 @@ menu-btn img {
  background-color: rgb(255, 0, 0);
  border-radius: 5px;
 }
+
+
 

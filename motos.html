@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pasolos</title>
+  <title>Motos</title>
   <link rel="stylesheet" href="prueva.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,6 +54,8 @@
             alert('Imagen eliminada con éxito');
         });
     });
+
+    
     </script>
 
 </head>
@@ -193,30 +195,33 @@
       </div>
       <div class="cont">
        <a href=""> <img src="imagenes/motocarreta.png" alt="Moto">
-        <h3>Motoscarrata</h3>
+        <h3>Motoscarreta</h3>
         </a>
     </div>
   </div>
 
-  <div class="search-container">
+   <div class="search-container">
     <img src="imagenes/search-alt-2-regular-60.png" alt="Buscar" class="search-icon" id="searchIcon">
     <input type="text" id="searchBar" placeholder="Buscar producto...">
   </div>
 
-  <div class="no-result" id="noResult">Producto no existe</div>
+  <div class="no-result" id="noResult">Producto no existe</div> 
+<br>
 
-    <div class="sub">
+
+    <div class="submotos">
       <h2> tienda de super motos World <span>Racing</span></h2>
     </div>
   </main>
+  <br>
+  <br>
+  <br>
 
- 
 
 
-
-  <div class="productos" id="product-list">
+  <div class="productos" id="product-list" style="margin-top: 120px;">
     <div class="producto" data-name="moto1" data-description="Descripción del producto 1" data-price="$99.99" data-image="imagenes/moto7.avif" data-link="productos.html">
-        <img src="imagenes/pasola.jpg" alt="Producto 1">
+        <img src="imagenes/moto11.jpg" alt="Producto 1">
         <h2>moto1</h2>
         <p>$10</p>
         <div class="cal">
@@ -239,7 +244,7 @@
 
 
     <div class="producto" data-name="moto2" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto12.jpg" data-link="productos.html">
-      <img src="imagenes/pasola2.jpg" alt="Producto 2">
+      <img src="imagenes/moto12.jpg" alt="Producto 2">
       <h2>moto 350</h2>
       <p>$16.00</p>
       <div class="cal">
@@ -256,7 +261,7 @@
     </div>
 
     <div class="producto" data-name="moto3" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto15.jpg" data-link="productos.html">
-      <img src="imagenes/pasola3.jpg" alt="Producto 2">
+      <img src="imagenes/moto15.jpg" alt="Producto 2">
       <h2>moto 250</h2>
       <p>$16.00</p>
       <div class="cal">
@@ -274,7 +279,7 @@
 
 
     <div class="producto" data-name="moto4" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto18.jpg" data-link="productos.html">
-      <img src="imagenes/pasola4.jpg" alt="Producto 2">
+      <img src="imagenes/moto18.jpg" alt="Producto 2">
       <h2>moto 550</h2>
       <p>$216.00</p>
       <div class="cal">
@@ -291,7 +296,7 @@
     </div>
 
     <div class="producto" data-name="moto5" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
-      <img src="imagenes/pasola5.jpg" alt="Producto 2"  height="250">
+      <img src="imagenes/moto9.avif" alt="Producto 2">
       <h2>moto 650</h2>
       <p>$1116.00</p>
       <div class="cal">
@@ -309,7 +314,7 @@
 
 
     <div class="producto" data-name="moto6" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
-      <img src="imagenes/pasola6.jpg" alt="Producto 2">
+      <img src="imagenes/moto19.jpg" alt="Producto 2">
       <h2>moto 350</h2>
       <p>$16.00</p>
       <div class="cal">
@@ -327,10 +332,127 @@
   <!-- </div> -->
 
 
+  
 
+
+<div class="productos" id="product-list" >
+  <div class="producto" data-name="moto1" data-description="Descripción del producto 1" data-price="$99.99" data-image="imagenes/moto7.avif" data-link="productos.html">
+      <img src="imagenes/moto11.jpg" alt="Producto 1">
+      <h2>moto1</h2>
+      <p>$10</p>
+      <div class="cal">
+          <a href="javascript:void(0)" class="agregar" data-nombre="moto1" data-precio="10" data-image="imagenes/moto11.jpg " data-link="productos.html">
+              <img src="imagenes/cart-regular-60.png" alt="">
+          </a>
+      </div>
+      <div class="cor">
+          <div class="compra">
+              <a href="">compra</a>
+              <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+          </div>
+      </div>
+  </div>
+  <!-- Agrega más productos aquí si es necesario -->
+
+
+
+
+
+
+  <div class="producto" data-name="moto2" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto12.jpg" data-link="productos.html">
+    <img src="imagenes/moto12.jpg" alt="Producto 2">
+    <h2>moto 350</h2>
+    <p>$16.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="moto mk343" data-precio="10"  data-image="imagenes//moto12.jpg " data-link="productos.html">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="productos.html">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="producto" data-name="moto3" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto15.jpg" data-link="productos.html">
+    <img src="imagenes/moto15.jpg" alt="Producto 2">
+    <h2>moto 250</h2>
+    <p>$16.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="moto3" data-precio="11110" data-image="imagenes/moto15.jpg" data-link="productos.html">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="producto" data-name="moto4" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto18.jpg" data-link="productos.html">
+    <img src="imagenes/moto18.jpg" alt="Producto 2">
+    <h2>moto 550</h2>
+    <p>$216.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="Producto 3" data-precio="22210" data-image="imagenes/moto18.jpg" data-link="productos.html">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="producto" data-name="moto5" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
+    <img src="imagenes/moto9.avif" alt="Producto 2">
+    <h2>moto 650</h2>
+    <p>$1116.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="Producto 4" data-precio="33310">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="producto" data-name="kawasaki" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
+    <img src="imagenes/moto19.jpg" alt="Producto 2">
+    <h2>kawasaki</h2>
+    <p>$16.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="kawasaki" data-precio="10">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
   <script src="pruva.js"></script>
 
-  
-</body>
+ 
+ 
+
 
 </html>

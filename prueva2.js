@@ -128,12 +128,6 @@ function filterProducts() {
 
 
 
-
-
-
-
-
-
 //carrito
 
 document.addEventListener('DOMContentLoaded', function() {

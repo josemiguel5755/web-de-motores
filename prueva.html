@@ -18,6 +18,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const savedImage = localStorage.getItem('profileImage');
@@ -53,6 +54,8 @@
             alert('Imagen eliminada con éxito');
         });
     });
+
+    
     </script>
 
 </head>
@@ -127,6 +130,7 @@
      </div>  -->
 
 
+   
 
 
       <div class="container_prueba">
@@ -191,26 +195,22 @@
       </div>
       <div class="cont">
        <a href=""> <img src="imagenes/motocarreta.png" alt="Moto">
-        <h3>Motoscarrata</h3>
+        <h3>Motoscarreta</h3>
         </a>
     </div>
   </div>
 
+  <!-- <div class="search-container">
+    <img src="imagenes/search-alt-2-regular-60.png" alt="Buscar" class="search-icon" id="searchIcon">
+    <input type="text" id="searchBar" placeholder="Buscar producto...">
+  </div>
+
+  <div class="no-result" id="noResult">Producto no existe</div> -->
 
     <div class="sub">
       <h2> tienda de super motos World <span>Racing</span></h2>
     </div>
   </main>
-
-  <div class="search-container">
-    <img src="imagenes/search-alt-2-regular-60.png" alt="Buscar" class="search-icon" id="searchIcon">
-    <input type="text" id="searchBar" placeholder="Buscar producto...">
-  </div>
-  <div class="productos" id="product-list">
-    <!-- Productos aquí -->
-  </div>
-
-  <div class="no-result" id="noResult">Producto no existe</div>
 
 
 
@@ -327,11 +327,145 @@
   <!-- </div> -->
 
 
-  
+  <div class="banner" id="banner">
+    <img src="imagenes/892885ce-598d-493c-805b-978bcde16c78.webp" alt="Moto">
+    <div class="infor">
+        <h1>Título del Banner</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores voluptate iste ea tempora quis veniam odio omnis modi placeat quae magnam harum error assumenda libero quo debitis, amet ratione maxime repellat similique. Ut in accusamus accusantium consectetur saepe temporibus quam commodi illo facilis, corporis quod harum expedita alias deleniti dolorem non cupiditate eos numquam? Laborum, quam omnis, repellat laboriosam debitis illo dicta veritatis sunt totam est quibusdam dolores et, aliquid ullam at suscipit delectus. Enim, commodi eius? Ipsum, praesentium aliquid facere molestias esse, culpa perferendis unde obcaecati maiores nostrum laborum omnis consequuntur aliquam ullam suscipit nihil soluta. Minima, optio labore.</p>
+    </div>
+</div>
 
-  
 
-  <script src="prueva2.js"></script>
+
+<div class="productos" id="product-list" >
+  <div class="producto" data-name="moto1" data-description="Descripción del producto 1" data-price="$99.99" data-image="imagenes/moto7.avif" data-link="productos.html">
+      <img src="imagenes/moto11.jpg" alt="Producto 1">
+      <h2>moto1</h2>
+      <p>$10</p>
+      <div class="cal">
+          <a href="javascript:void(0)" class="agregar" data-nombre="moto1" data-precio="10" data-image="imagenes/moto11.jpg " data-link="productos.html">
+              <img src="imagenes/cart-regular-60.png" alt="">
+          </a>
+      </div>
+      <div class="cor">
+          <div class="compra">
+              <a href="">compra</a>
+              <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+          </div>
+      </div>
+  </div>
+  <!-- Agrega más productos aquí si es necesario -->
+
+
+
+
+
+
+  <div class="producto" data-name="moto2" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto12.jpg" data-link="productos.html">
+    <img src="imagenes/moto12.jpg" alt="Producto 2">
+    <h2>moto 350</h2>
+    <p>$16.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="moto mk343" data-precio="10"  data-image="imagenes//moto12.jpg " data-link="productos.html">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="productos.html">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="producto" data-name="moto3" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto15.jpg" data-link="productos.html">
+    <img src="imagenes/moto15.jpg" alt="Producto 2">
+    <h2>moto 250</h2>
+    <p>$16.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="moto3" data-precio="11110" data-image="imagenes/moto15.jpg" data-link="productos.html">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="producto" data-name="moto4" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto18.jpg" data-link="productos.html">
+    <img src="imagenes/moto18.jpg" alt="Producto 2">
+    <h2>moto 550</h2>
+    <p>$216.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="Producto 3" data-precio="22210" data-image="imagenes/moto18.jpg" data-link="productos.html">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="producto" data-name="moto5" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
+    <img src="imagenes/moto9.avif" alt="Producto 2">
+    <h2>moto 650</h2>
+    <p>$1116.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="Producto 4" data-precio="33310">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="producto" data-name="kawasaki" data-description="Descripción del producto 2" data-price="$9.99"  data-image="imagenes/moto11.jpg" data-link="productos.html">
+    <img src="imagenes/moto19.jpg" alt="Producto 2">
+    <h2>kawasaki</h2>
+    <p>$16.00</p>
+    <div class="cal">
+      <a href="javascript:void(0)" class="agregar" data-nombre="kawasaki" data-precio="10">
+        <img src="imagenes/cart-regular-60.png" alt="">
+      </a>
+    </div>
+    <div class="cor">
+      <div class="compra">
+        <a href="">compra</a>
+        <span class="favorite" onclick="toggleFavorite(this)">&#9825</span>
+      </div>
+    </div>
+  </div>
+
+
+
 </body>
+  <script src="pruva.js"></script>
+
+  <script>
+    document.addEventListener("scroll", function() {
+      const banner = document.getElementById("banner");
+      const bannerPosition = banner.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 3.5;
+  
+      if (bannerPosition < screenPosition) {
+          banner.classList.add("show");
+      }
+  });
+  
+  </script>
+ 
+
 
 </html>
