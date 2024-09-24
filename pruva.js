@@ -1,75 +1,98 @@
-
+// fovorito
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  let favoriteItems = new Set();
+  // Cargar los favoritos desde localStorage, si existen
+  let favoriteItems = new Set(JSON.parse(localStorage.getItem('favoriteItems')) || []);
 
+  // Función para actualizar el contador de favoritos
+  function updateFavoriteCounter() {
+    let counter = document.getElementById('favorites-counter');
+    counter.textContent = favoriteItems.size; // Actualiza el contador visible
+  }
+
+  // Función para agregar/eliminar favoritos
   function toggleFavorite(element) {
-      let productElement = element.closest('.producto');
-      let productName = productElement.getAttribute('data-name');
-      
-      if (favoriteItems.has(productName)) {
-          favoriteItems.delete(productName);
-          element.innerHTML = '&#9825;'; // Corazón sin rellenar
-          element.classList.remove('favorited');
-          alert("Se eliminó de favoritos");
-      } else {
-          favoriteItems.add(productName);
-          element.innerHTML = '&#9829;'; // Corazón relleno
-          element.classList.add('favorited');
-          alert("Se añadió a favoritos");
-      }
-     
-      updateFavoritesList();
-  }
- 
-  function updateFavoritesList() {
-      let favoritesList = document.getElementById('favorites-list');
-      favoritesList.innerHTML = ''; // Limpiar la lista de favoritos
-      
-      favoriteItems.forEach(function(productName) {
-          let productElement = document.querySelector(`.producto[data-name="${productName}"]`);
-          if (productElement) {
-              let name = productElement.getAttribute('data-name');
-              let description = productElement.getAttribute('data-description');
-              let price = productElement.getAttribute('data-price');
-              let image = productElement.getAttribute('data-image');
-              let link = productElement.getAttribute('data-link');
-              
-              let favoriteItem = document.createElement('div');
-              favoriteItem.classList.add('favorite-item');
-              favoriteItem.innerHTML = `
-                  <img src="${image}" alt="${name}">
-                  <div class="info">
-                      <h3>${name}</h3>
-                      <p>${description}</p>
-                      <span class="price">${price}</span>
-                      <a href="${link}" target="_blank">Ver producto</a>
-                  </div>
-                  <button class="remove-btn" onclick="removeFavorite('${productName}')">Eliminar</button>
-              `;
-              
-              favoritesList.appendChild(favoriteItem);
-          }
-      });
-  }
-
-  function removeFavorite(productName) {
+    let productElement = element.closest('.producto');
+    let productName = productElement.getAttribute('data-name');
+    
+    if (favoriteItems.has(productName)) {
       favoriteItems.delete(productName);
-      let productElement = document.querySelector(`.producto[data-name="${productName}"] .favorite`);
-      if (productElement) {
-          productElement.innerHTML = '&#9825;'; // Corazón sin rellenar
-          productElement.classList.remove('favorited');
-      }
-      updateFavoritesList();
+      element.innerHTML = '&#9825;'; // Corazón sin rellenar
+      alert("Se eliminó de favoritos");
+    } else {
+      favoriteItems.add(productName);
+      element.innerHTML = '&#9829;'; // Corazón relleno
+      alert("Se añadió a favoritos");
+    }
+
+    // Guardar los favoritos en localStorage
+    localStorage.setItem('favoriteItems', JSON.stringify(Array.from(favoriteItems)));
+
+    // Actualizar lista de favoritos y contador
+    updateFavoritesList();
+    updateFavoriteCounter();
   }
 
+  // Función para actualizar la lista de favoritos en el menú
+  function updateFavoritesList() {
+    let favoritesList = document.getElementById('favorites-list');
+    favoritesList.innerHTML = ''; // Limpiar la lista de favoritos
+
+    favoriteItems.forEach(function(productName) {
+      // Aquí suponemos que tienes productos con atributos específicos en HTML
+      let productElement = document.querySelector(`.producto[data-name="${productName}"]`);
+      if (productElement) {
+        let name = productElement.getAttribute('data-name');
+        let description = productElement.getAttribute('data-description');
+        let price = productElement.getAttribute('data-price');
+        let image = productElement.getAttribute('data-image');
+        let link = productElement.getAttribute('data-link');
+
+        let favoriteItem = document.createElement('div');
+        favoriteItem.classList.add('favorite-item');
+        favoriteItem.innerHTML = `
+          <img src="${image}" alt="${name}">
+          <div class="info">
+            <h3>${name}</h3>
+            <p>${description}</p>
+            <span class="price">${price}</span>
+            <a href="${link}" target="_blank">Ver producto</a>
+          </div>
+          <button class="remove-btn" onclick="removeFavorite('${productName}')">Eliminar</button>
+        `;
+        
+        favoritesList.appendChild(favoriteItem);
+      }
+    });
+  }
+
+  // Función para eliminar un favorito
+  function removeFavorite(productName) {
+    favoriteItems.delete(productName);
+    let productElement = document.querySelector(`.producto[data-name="${productName}"] .favorite`);
+    if (productElement) {
+      productElement.innerHTML = '&#9825;'; // Corazón sin rellenar
+    }
+
+    // Guardar cambios en localStorage
+    localStorage.setItem('favoriteItems', JSON.stringify(Array.from(favoriteItems)));
+
+    updateFavoritesList();
+    updateFavoriteCounter();
+  }
+
+  // Vincular las funciones globalmente
   window.toggleFavorite = toggleFavorite;
   window.removeFavorite = removeFavorite;
+
+  // Actualizar la lista de favoritos y el contador al cargar la página
+  updateFavoritesList();
+  updateFavoriteCounter();
 });
 
 
-
+//barra de busueda
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchIcon = document.getElementById('searchIcon');
@@ -118,10 +141,10 @@ function filterProducts() {
 
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const carritoProductos = document.querySelector('.carrito-productos');
   const totalSpan = document.getElementById('total');
+  const cartCount = document.getElementById('cart-count'); // Elemento para el contador
   let totalAPagar = 0;
 
   function agregarAlCarrito(nombre, precio, imageUrl, productLink) {
@@ -144,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
           nuevoProducto.classList.add('carrito-producto');
           nuevoProducto.dataset.nombre = nombre;
           nuevoProducto.innerHTML = `
-              <img src="${imageUrl}" alt="${nombre}" class="producto-imagen" style="width: 110px; height: 90px; object-fit: cover;">
+              <img src="${imageUrl}" alt="${nombre}" class="producto-imagen" style="width: 100px; height: 90px; object-fit: cover;">
               <span class="nombre-producto">${nombre}</span>
               <span class="precio">$${precio.toFixed(2)}</span>
               <div class="cantidad">
@@ -163,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       actualizarTotal();
+      actualizarContadorCarrito(); // Actualiza el contador cuando se agrega un producto
   }
 
   function actualizarEventosEliminar() {
@@ -180,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
       totalAPagar -= precio * cantidad;
       totalSpan.textContent = totalAPagar.toFixed(2);
       producto.remove();
+      actualizarContadorCarrito(); // Actualiza el contador cuando se elimina un producto
   }
 
   function actualizarEventosCantidad() {
@@ -235,7 +260,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       totalSpan.textContent = totalAPagar.toFixed(2);
   }
+
+  function actualizarContadorCarrito() {
+      const productosEnCarrito = carritoProductos.querySelectorAll('.carrito-producto').length;
+      cartCount.textContent = productosEnCarrito;
+  }
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const stars = document.querySelectorAll('.star');

@@ -1311,6 +1311,8 @@ padding: 0px;
 
 /* favorito de la pagina nosotros */
 
+
+
 .menu-btn2 img {
   width: 40px;
   position: relative;
@@ -1626,7 +1628,14 @@ margin: 5px;
 
 /* pefil de la seccion de producto */
 
-.menu-btn3 img {
+.perfil a img {
+  position: relative;
+  left: 90%;
+  bottom: 45px;
+  width: 40px;
+}
+
+/* .menu-btn3 img {
   width: 40px;
   position: relative;
   left: 20px;
@@ -1683,13 +1692,13 @@ margin: 5px;
   color: rgb(255, 68, 0);
   font-family: mifuente2;
   font-size: 35px;
-  /* font-weight: 0;
+   font-weight: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-style: italic; */
+  font-style: italic; 
 }
 
-/* .menu-perfil a {
+ .menu-perfil a {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -1697,7 +1706,7 @@ margin: 5px;
   border-top: solid 1px rgba(255, 255, 255, 0.705);
 
 
-} */
+}  */
 
 
 

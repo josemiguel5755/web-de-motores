@@ -65,25 +65,163 @@
         </div>
     </main>
 
-    <div class="metododepago">
-    <form action="">
-        <h3>pedidos</h3>
+    <!-- <div class="metododepago">
+        <h3>metodos de pagos</h3>
+        <h4>Pedidos</h4>
         <p>total de compra <b>$10.56</b></p>
 
-        <h4>metodos de pagos</h4>
+       
 
        <div class="concs">
         <div class="conimagen">
-            <img src="imagenes/bxs-credit-card.svg" alt="">
-            <p>taejeta</p>
+           <a href=""> <img src="imagenes/bxs-credit-card.svg" alt="">
+            <p>tarjeta</p>
+            </a>
         </div>
         <div class="conimagen">
-            <img src="imagenes/bxl-paypal.svg" alt="">
+          <a href=""> <img src="imagenes/bxl-paypal.svg" alt="">
             <p>peypal</p>
-        
+        </a>
         <div>
        </div>
+    </div> -->
+
+  
+    <!-- <form action="" class="pagando">
+       <p>seleccione su tipo de targeta</p>
+        <label for="period"></label>
+            <select name="" id="" required>
+                <option value="">Elija el tipo de tarjeta</option>
+                <option value="1">Debito</option>
+                <option value="2">Prepago</option>
+                <option value="3">Credito</option>
+            </select>
+           <br>
+
+            <label for="numrotarjeta"></label>
+            <input type="text" id="" placeholder="Numero de la tarjeta">
+            <br>
+            <br>
+
+            <label for=""></label>
+            <input type="date" id="fecha">
+            <br>
+            <label for="">CVC</label>
+        <input type="text" id="cvc">
+        <br>
+
+        <button type="submit" class="botonpagar">Procesar pago</button>
+    </form> -->
+
+
+
+
+<div class="formulario2">
+    <h3>Método de Pago</h3>
+    <p>Selecciona tu método de pago preferido y proporciona los detalles necesarios.</p>
+
+    <div class="catg">
+        <div class="categoriapago">
+            <button type="button" id="tarjeta-btn">Tarjeta 
+                <img src="imagenes/bxs-credit-card.svg" alt="">
+            </button>
+        </div>
+        <div class="categoriapago">
+            <button type="button" id="paypal-btn">PayPal 
+                <img src="imagenes/bxl-paypal.svg" alt="">
+            </button>
+        </div>
+    </div>
+
+    <div id="contenido-pago">
+        <!-- Aquí se cargará dinámicamente el contenido del método de pago seleccionado -->
+        <div id="tarjeta-content">
+            <div> 
+                <label for="period">Tipo de tarjeta</label>
+                <select name="period" id="period" required>
+                    <option value="">- Elija una tarjeta -</option>
+                    <option value="1">Débito</option>
+                    <option value="2">Crédito</option>
+                    <option value="3">Prepago</option>
+                </select>
+            </div>
+            <br>
+            <input type="text" id="nombre" placeholder="Nombre de la tarjeta">
+            <br>
+            <input type="text" id="numero" placeholder="Número de tarjeta">
+            <br>
+            <div class="inou">
+                <div class="anywey">
+                   <label for=""></label>
+                   <input type="date" id="fecha">
+                </div>
+                <br>
+                <div class="anywey">
+                    <label for="">CVC</label>
+                    <input type="text" id="cvc">
+                </div>
+            </div>
+            <br>
+            <button type="submit">Enviar</button>
+        </div>
     </form>
     </div>
+</div>
+
+
+</main>
+<script>
+    // Función para mostrar el formulario de pago con tarjeta
+    function mostrarFormularioTarjeta() {
+        document.getElementById("contenido-pago").innerHTML = `
+            <form id="tarjeta-form">
+                <div>
+                    <label for="period">Tipo de tarjeta</label>
+                    <select name="period" id="period" required>
+                        <option value="">- Elija una tarjeta -</option>
+                        <option value="1">Débito</option>
+                        <option value="2">Crédito</option>
+                        <option value="3">Prepago</option>
+                    </select>
+                </div>
+                <br>
+                <input type="text" id="nombre" placeholder="Nombre de la tarjeta">
+                <br>
+                <input type="text" id="numero" placeholder="Número de tarjeta">
+                <br>
+                <div class="inou">
+                <div class="anywey">
+                   <label for=""></label>
+                   <input type="date" id="fecha">
+                </div>
+                <div class="anywey">
+                    <label for="">CVC</label>
+                    <input type="text" id="cvc">
+                </div>
+            </div>
+                <br>
+                  <br>
+                <button type="submit">Enviar</button>
+            </form>
+        `;
+    }
+
+    // Función para mostrar el formulario de PayPal
+    function mostrarFormularioPayPal() {
+        document.getElementById("contenido-pago").innerHTML = `
+            <h3>PayPal</h3>
+            <div class="pagapeypal">
+            <a href="">Pagar con peypaal</a>
+        </div>
+        `;
+    }
+
+    // Asignar los eventos de clic a los botones
+    document.getElementById("paypal-btn").addEventListener("click", mostrarFormularioPayPal);
+    document.getElementById("tarjeta-btn").addEventListener("click", mostrarFormularioTarjeta);
+
+    // Cargar el formulario de tarjeta por defecto
+    mostrarFormularioTarjeta();
+</script>
 </body>
 </html>
