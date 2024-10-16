@@ -1962,7 +1962,7 @@ nav {
 .container_menu {
     display: flex;
   position: relative;
-  left: 40px;
+  left: 10px;
   top: 13px;
 }
 
