@@ -1899,6 +1899,10 @@ height: 589px;
 
 /* responsive */
 @media screen and (max-width: 900px) {
+
+    header {
+        width: 230%;
+    }
   /* menu desplegable */
 
   h1 {
