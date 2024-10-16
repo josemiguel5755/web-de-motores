@@ -26,7 +26,7 @@ body {
 
 header {
     color: white;
-    background-image: url(../imagenes/fondo.jpg);
+    background-image: url(imagenes/fondo.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
