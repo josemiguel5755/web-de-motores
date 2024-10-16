@@ -1900,18 +1900,15 @@ height: 589px;
 /* responsive */
 @media screen and (max-width: 900px) {
 
+    body {
+        width: 100%;
+    }
+
     header {
         color: white;
         background-image: url(/imagenes/fondo.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        overflow: hidden;
-        height: 800px;
-        width: 101%;
-       text-align: center;
-    
+      background-size: cover;
+    background-position: right;
     }
   /* menu desplegable */
 
@@ -2044,5 +2041,33 @@ nav {
    
     float: left;
 }
+
+
+ /* categoria */
+.cont img {
+    margin-top: 70px;
+    max-width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: solid white;
+   
+
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.producto .cal img {
+    position: relative;
+    right: 60px;
+    top: 19px;
+}
+
   }
   
+
+
+
