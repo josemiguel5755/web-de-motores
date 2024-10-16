@@ -1900,8 +1900,18 @@ height: 589px;
 /* responsive */
 @media screen and (max-width: 900px) {
 
-    header img {
-        width: 100%;
+    header {
+        color: white;
+        background-image: url(/imagenes/fondo.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        overflow: hidden;
+        height: 800px;
+        width: 101%;
+       text-align: center;
+    
     }
   /* menu desplegable */
 
